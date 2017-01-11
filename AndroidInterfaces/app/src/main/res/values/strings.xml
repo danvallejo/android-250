@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">AndroidInterfaces</string>
+    <string name="app_name">Android Interfaces</string>
+    <plurals name="country">
+        <item quantity="one">Country</item>
+        <item quantity="other">Countries</item>
+    </plurals>
+
 </resources>
