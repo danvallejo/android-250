@@ -71,6 +71,18 @@ public class MainActivity extends AppCompatActivity {
         return null;
     }
 
+    public void onLocale(View view){
+        Intent intent = new Intent(this, LocaleActivity.class);
+
+        startActivity(intent);
+    }
+
+    public void onFeatures(View view){
+        Intent intent = new Intent(this, FeatureActivity.class);
+
+        startActivity(intent);
+    }
+
     public void onDrawables(View view){
         Intent intent = new Intent(this, DrawableActivity.class);
 

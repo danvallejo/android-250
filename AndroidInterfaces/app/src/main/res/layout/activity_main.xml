@@ -11,6 +11,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.cstructor.androidinterfaces.MainActivity">
 
+   <Button android:id="@+id/uxLocale"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:text="@string/locale"
+       android:onClick="onLocale"></Button>
+
+   <Button android:id="@+id/uxFeatures"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:text="Features"
+       android:onClick="onFeatures"></Button>
+
    <Button android:id="@+id/uxDrawable"
        android:layout_height="wrap_content"
        android:layout_width="match_parent"

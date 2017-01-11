@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Android Interfaces-ES</string>
+    <string name="locale">Locale-ES</string>
+
+    <plurals name="country">
+        <item quantity="one">Country-ES</item>
+        <item quantity="other">Countries-ES</item>
+    </plurals>
+
+</resources>
