@@ -14,6 +14,7 @@
     <TextView
       style="@style/CodeFont.Red"
         android:text="Hello" />
+
     <EditText
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
@@ -23,19 +24,19 @@
        android:layout_height="wrap_content"
        android:layout_width="match_parent"
        android:text="@string/locale"
-       android:onClick="onLocale"></Button>
+       ></Button>
 
    <Button android:id="@+id/uxFeatures"
        android:layout_height="wrap_content"
        android:layout_width="match_parent"
        android:text="Features"
-       android:onClick="onFeatures"></Button>
+       ></Button>
 
    <Button android:id="@+id/uxDrawable"
        android:layout_height="wrap_content"
        android:layout_width="match_parent"
        android:text="Drawables"
-       android:onClick="onDrawables"></Button>
+       ></Button>
 
    <TextView
        android:id="@+id/uxTextView"

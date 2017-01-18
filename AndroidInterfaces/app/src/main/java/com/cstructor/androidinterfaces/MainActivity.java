@@ -13,17 +13,23 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.io.InputStream;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity {
+
+    @Bind(R.id.uxTextView) TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ButterKnife.bind(this);
 
         String text = getStringFromRaw(this);
 
-        TextView textView = (TextView)findViewById(R.id.uxTextView);
         textView.setText(text);
     }
 
@@ -71,19 +77,22 @@ public class MainActivity extends AppCompatActivity {
         return null;
     }
 
-    public void onLocale(View view){
+    @OnClick(R.id.uxLocale)
+    public void jazz(View view){
         Intent intent = new Intent(this, LocaleActivity.class);
 
         startActivity(intent);
     }
 
-    public void onFeatures(View view){
+    @OnClick(R.id.uxFeatures)
+    public void bar(View view){
         Intent intent = new Intent(this, FeatureActivity.class);
 
         startActivity(intent);
     }
 
-    public void onDrawables(View view){
+    @OnClick(R.id.uxDrawable)
+    public void foo(View view){
         Intent intent = new Intent(this, DrawableActivity.class);
 
         startActivity(intent);
