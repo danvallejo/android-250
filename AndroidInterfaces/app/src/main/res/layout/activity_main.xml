@@ -11,6 +11,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.cstructor.androidinterfaces.MainActivity">
 
+    <TextView
+      style="@style/CodeFont.Red"
+        android:text="Hello" />
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        style="@style/Numbers" />
+
    <Button android:id="@+id/uxLocale"
        android:layout_height="wrap_content"
        android:layout_width="match_parent"
