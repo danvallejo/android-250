@@ -2,9 +2,12 @@ package com.cstructor.androidinterfaces;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.os.AsyncTask;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -130,6 +133,30 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return null;
+    }
+
+    private final static int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1;
+    @OnClick(R.id.uxLoader)
+    public void onLoader(View view) {
+        if (ContextCompat.checkSelfPermission(this, "android.permission.READ_CONTACTS") != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{"android.permission.READ_CONTACTS"}, MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+        } else {
+            Intent intent = new Intent(this, LoaderActivity.class);
+            startActivity(intent);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_READ_CONTACTS: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Intent intent = new Intent(this, LoaderActivity.class);
+                    startActivity(intent);
+                    return;
+                }
+            }
+        }
     }
 
     @OnClick(R.id.uxContact)
