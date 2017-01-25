@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -129,6 +130,13 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @OnClick(R.id.uxContact)
+    public void contact(View view){
+        Intent intent = new Intent(this, ContactActivity.class);
+
+        startActivity(intent);
     }
 
     @OnClick(R.id.uxLocale)

@@ -11,6 +11,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.cstructor.androidinterfaces.MainActivity">
 
+    <Button android:id="@+id/uxContact"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Contact"
+        ></Button>
+
     <TextView
       style="@style/CodeFont.Red"
         android:text="Hello" />
