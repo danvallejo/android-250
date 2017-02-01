@@ -13,12 +13,23 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
+    <permission android:name="com.cstructor.androidinterfaces.provider.permission.READ_PLANETS" />
+    <permission android:name="com.cstructor.androidinterfaces.provider.permission.WRITE_PLANETS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <provider
+            android:name=".PlanetProvider"
+            android:authorities="com.cstructor.androidinterfaces.provider.Planet"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="com.cstructor.androidinterfaces.provider.permission.READ_PLANETS"
+            android:writePermission="com.cstructor.androidinterfaces.provider.permission.WRITE_PLANETS"></provider>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,8 +54,8 @@
         <activity
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".LoaderActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".LoaderActivity" />
     </application>
 
 </manifest>
