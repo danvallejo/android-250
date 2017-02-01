@@ -19,39 +19,11 @@ public class CustomView extends View {
     protected void onDraw(Canvas canvas) {
         canvas.drawColor(Color.WHITE);
 
-        //canvas.rotate(-30.0f);
-        canvas.scale(4f, 4f);
-        //canvas.skew(.1f, .3f);
-        canvas.translate(30f,10f);
-
         Paint paint = new Paint();
-        paint.setTextSize(30);
-        paint.setAntiAlias(true);
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(0xffff0000);
 
-        Log.d("antialias", Boolean.toString(paint.isAntiAlias()));
-
-        paint.setColor(Color.RED);
-        canvas.drawText("Android", 25, 30, paint);
-
-
-        paint.setColor(Color.CYAN);
-        canvas.drawText("Android", 0,0, paint);
-
-        Path path = new Path();
-        path.addArc(new RectF(10,50,90,200), 240, 90);
-        canvas.drawTextOnPath("Android", path, 0,0, paint);
-
-        float[] pos = new float[] {
-                20,80,
-                29,83,
-                36,80,
-                46,83,
-                52,80,
-                62,83,
-                68,80
-        };
-        paint.setColor(Color.GREEN);
-        canvas.drawPosText("Android", pos, paint);
+        canvas.drawOval(0, 0, 50, 50, paint);
     }
 }
 

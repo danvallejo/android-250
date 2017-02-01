@@ -11,8 +11,8 @@
     tools:context="com.cstructor.androidinterfaces.CanvasActivity">
 
     <com.cstructor.androidinterfaces.CustomView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:background="@color/colorAccent"/>
 
 </RelativeLayout>
