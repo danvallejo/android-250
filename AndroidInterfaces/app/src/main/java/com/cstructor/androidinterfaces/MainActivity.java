@@ -159,6 +159,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @OnClick(R.id.uxCanvas)
+    public void canvas(View view){
+        Intent intent = new Intent(this, CanvasActivity.class);
+
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxContact)
     public void contact(View view){
         Intent intent = new Intent(this, ContactActivity.class);

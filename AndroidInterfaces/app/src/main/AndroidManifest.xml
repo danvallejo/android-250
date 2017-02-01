@@ -28,7 +28,7 @@
             android:enabled="true"
             android:exported="true"
             android:readPermission="com.cstructor.androidinterfaces.provider.permission.READ_PLANETS"
-            android:writePermission="com.cstructor.androidinterfaces.provider.permission.WRITE_PLANETS"></provider>
+            android:writePermission="com.cstructor.androidinterfaces.provider.permission.WRITE_PLANETS" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -56,6 +56,7 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoaderActivity" />
+        <activity android:name=".CanvasActivity"></activity>
     </application>
 
 </manifest>
