@@ -57,7 +57,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoaderActivity" />
         <activity android:name=".CanvasActivity" />
-        <activity android:name=".TouchActivity"></activity>
+        <activity android:name=".TouchActivity" />
+        <activity android:name=".DragDropActivity"></activity>
     </application>
 
 </manifest>

@@ -11,6 +11,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.cstructor.androidinterfaces.MainActivity">
 
+    <Button android:id="@+id/uxDrag"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Drag Drop"
+        ></Button>
+
     <Button android:id="@+id/uxTouch"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"

@@ -159,6 +159,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @OnClick(R.id.uxDrag)
+    public void dar(View view){
+        Intent intent = new Intent(this, DragDropActivity.class);
+
+        startActivity(intent);
+    }
+
+
     @OnClick(R.id.uxTouch)
     public void touch(View view){
         Intent intent = new Intent(this, TouchActivity.class);
