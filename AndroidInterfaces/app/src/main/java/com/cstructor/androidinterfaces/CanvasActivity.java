@@ -10,6 +10,8 @@ import android.support.v4.view.GestureDetectorCompat;
 public class CanvasActivity extends AppCompatActivity
         implements GestureDetector.OnGestureListener{
     private GestureDetectorCompat mDetector;
+    private CustomView customView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +20,7 @@ public class CanvasActivity extends AppCompatActivity
 
         // context, listener
         mDetector = new GestureDetectorCompat(this,this);
+        customView = (CustomView) findViewById(R.id.uxView);
     }
 
     @Override
@@ -54,6 +57,13 @@ public class CanvasActivity extends AppCompatActivity
         Log.d("CanvasActivity", "onScroll: e2:" + e2.toString());
         Log.d("CanvasActivity", "onScroll: distanceX:" + distanceX);
         Log.d("CanvasActivity", "onScroll: distanceY:" + distanceY);
+
+        customView
+                .animate()
+                .x(customView.getX() - distanceX) // ???
+                .y(customView.getY() - distanceY) // ???
+                .setDuration(0)
+                .start();
 
         return false;
     }
