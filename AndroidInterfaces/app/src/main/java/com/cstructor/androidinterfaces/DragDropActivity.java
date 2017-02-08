@@ -14,6 +14,7 @@ import butterknife.ButterKnife;
 public class DragDropActivity extends AppCompatActivity {
     @Bind(R.id.imageViewFrom) public ImageView imageViewFrom;
     @Bind(R.id.imageViewTo) public ImageView imageViewTo;
+    @Bind(R.id.imageViewTo2) public ImageView imageViewTo2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class DragDropActivity extends AppCompatActivity {
                 ClipData dragData = ClipData.newPlainText("icon", "ic_android");
 
                 // Create a drag shadow
-                View.DragShadowBuilder dragShadow = new View.DragShadowBuilder(imageViewFrom);
+                View.DragShadowBuilder dragShadow = new View.DragShadowBuilder(v);
 
                 // Start dragging
                 v.startDrag(dragData, dragShadow, null, 0);
@@ -41,7 +42,48 @@ public class DragDropActivity extends AppCompatActivity {
             }
         });
 
-        imageViewTo.setOnDragListener(new TouchDragEventListener());
+        imageViewTo.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Log.d("DragDropActivity", "onLongClick");
+
+                ClipData dragData = ClipData.newPlainText("icon", "ic_android");
+
+                // Create a drag shadow
+                View.DragShadowBuilder dragShadow = new View.DragShadowBuilder(v);
+
+                // Start dragging
+                v.startDrag(dragData, dragShadow, null, 0);
+
+                // Hide the view that is being dragged from
+                v.setVisibility(View.INVISIBLE);
+                return true;
+            }
+        });
+
+        imageViewTo2.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Log.d("DragDropActivity", "onLongClick");
+
+                ClipData dragData = ClipData.newPlainText("icon", "ic_android");
+
+                // Create a drag shadow
+                View.DragShadowBuilder dragShadow = new View.DragShadowBuilder(v);
+
+                // Start dragging
+                v.startDrag(dragData, dragShadow, null, 0);
+
+                // Hide the view that is being dragged from
+                v.setVisibility(View.INVISIBLE);
+                return true;
+            }
+        });
+
+        TouchDragEventListener touchDragEventListener = new TouchDragEventListener();
+
+        imageViewTo.setOnDragListener(touchDragEventListener);
+        imageViewTo2.setOnDragListener(touchDragEventListener);
     }
 
     protected class TouchDragEventListener implements View.OnDragListener {
@@ -59,11 +101,14 @@ public class DragDropActivity extends AppCompatActivity {
                     return true;
                 case DragEvent.ACTION_DROP:
                     Log.d("onDrag", "ACTION_DROP");
+
+                    ImageView imageView = (ImageView)v;
+
                     // Set the android icon on the destination ImageView
-                    imageViewTo.setImageResource(R.drawable.ic_android);
+                    imageView.setImageResource(R.drawable.ic_android);
 
                     // Force ImageView to redraw
-                    imageViewTo.invalidate();
+                    imageView.invalidate();
 
                     dropped = true;
                     return true;
