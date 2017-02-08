@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.graphics.Color;
 import android.content.res.TypedArray;
@@ -30,6 +31,27 @@ public class CustomView extends View {
     }
 
     @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+        int action = event.getAction();
+        Log.d("ontouch", String.format("x=%f y=%f", event.getX(), event.getY()));
+
+        if (action == MotionEvent.ACTION_DOWN) {
+            return true;
+        }
+        if (action == MotionEvent.ACTION_MOVE) {
+            width = (int) event.getX();
+            height = (int) event.getY();
+            invalidate();
+        }
+
+        return super.onTouchEvent(event);
+    }
+
+    private int height = 50;
+    private int width = 50;
+
+    @Override
     protected void onDraw(Canvas canvas) {
         canvas.drawColor(Color.WHITE);
 
@@ -37,7 +59,7 @@ public class CustomView extends View {
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(0xffff0000);
 
-        canvas.drawOval(0, 0, 50, 50, paint);
+        canvas.drawOval(0, 0, width, height, paint);
 
         if (showText) {
             String text = "Android 250";
@@ -52,15 +74,12 @@ public class CustomView extends View {
 
             float xPos = 0;
 
-            if (textPos == 0)
-            {
+            if (textPos == 0) {
                 xPos = 0;
-            }
-            else if (textPos == 1) {
+            } else if (textPos == 1) {
                 xPos = (canvasWidth - textWidth) / 2;
-            }
-            else if (textPos == 2){
-                xPos = (int)(canvasWidth - textWidth);
+            } else if (textPos == 2) {
+                xPos = (int) (canvasWidth - textWidth);
             }
 
             canvas.drawText(text, xPos, 100, paint);

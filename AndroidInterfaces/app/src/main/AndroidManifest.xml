@@ -56,7 +56,8 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoaderActivity" />
-        <activity android:name=".CanvasActivity"></activity>
+        <activity android:name=".CanvasActivity" />
+        <activity android:name=".TouchActivity"></activity>
     </application>
 
 </manifest>

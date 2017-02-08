@@ -159,6 +159,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @OnClick(R.id.uxTouch)
+    public void touch(View view){
+        Intent intent = new Intent(this, TouchActivity.class);
+
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxCanvas)
     public void canvas(View view){
         Intent intent = new Intent(this, CanvasActivity.class);
