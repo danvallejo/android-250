@@ -58,7 +58,8 @@
         <activity android:name=".LoaderActivity" />
         <activity android:name=".CanvasActivity" />
         <activity android:name=".TouchActivity" />
-        <activity android:name=".DragDropActivity"></activity>
+        <activity android:name=".DragDropActivity" />
+        <activity android:name=".NotificationActivity"></activity>
     </application>
 
 </manifest>

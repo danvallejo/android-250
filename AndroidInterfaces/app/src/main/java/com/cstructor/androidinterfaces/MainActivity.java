@@ -159,6 +159,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @OnClick(R.id.uxNotification)
+    public void notification(View view){
+        Intent intent = new Intent(this, NotificationActivity.class);
+
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxDrag)
     public void dar(View view){
         Intent intent = new Intent(this, DragDropActivity.class);
