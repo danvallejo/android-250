@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:animateLayoutChanges="true"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,6 +11,28 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.cstructor.androidinterfaces.MainActivity">
+
+    <Button
+        android:id="@+id/uxFrameAnimation"
+        android:text="FrameAnimation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/uxZoom"
+        android:text="Zoom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button android:id="@+id/uxCrossfade"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Crossfade"/>
+
+    <Button android:id="@+id/uxAnimateLayout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Animate Layout"/>
 
     <Button android:id="@+id/uxNotification"
         android:layout_height="wrap_content"

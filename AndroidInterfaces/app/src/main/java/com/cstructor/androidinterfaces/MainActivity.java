@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -157,6 +158,33 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    @OnClick(R.id.uxFrameAnimation)
+    public void onFrameAnimation(View view) {
+        Intent intent = new Intent(this, FrameAnimationActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.uxZoom)
+    public void onZoom(View view) {
+        Intent intent = new Intent(this, ZoomActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.uxCrossfade)
+    public void crossfade(View view){
+        Intent intent = new Intent(this, CrossfadeActivity.class);
+
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.uxAnimateLayout)
+    public void animate(View view){
+        LinearLayout linearLayout = (LinearLayout)findViewById(R.id.activity_main);
+        Button button = new Button(this);
+        button.setText("HELLO");
+        linearLayout.addView(button, 0);
     }
 
     @OnClick(R.id.uxNotification)

@@ -59,7 +59,10 @@
         <activity android:name=".CanvasActivity" />
         <activity android:name=".TouchActivity" />
         <activity android:name=".DragDropActivity" />
-        <activity android:name=".NotificationActivity"></activity>
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".CrossfadeActivity" />
+        <activity android:name=".ZoomActivity" />
+        <activity android:name=".FrameAnimationActivity"></activity>
     </application>
 
 </manifest>

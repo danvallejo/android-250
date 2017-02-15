@@ -1,11 +1,15 @@
 package com.cstructor.androidinterfaces;
 
+import android.animation.Animator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.support.v4.view.GestureDetectorCompat;
+import android.view.View;
+import android.view.ViewAnimationUtils;
+import android.view.animation.AccelerateDecelerateInterpolator;
 
 public class CanvasActivity extends AppCompatActivity
         implements GestureDetector.OnGestureListener{
@@ -25,6 +29,17 @@ public class CanvasActivity extends AppCompatActivity
 
     @Override
     public boolean onTouchEvent(MotionEvent event){
+
+        View shape = findViewById(R.id.uxView);
+
+        Animator animator = ViewAnimationUtils.createCircularReveal(shape, 0, 0, 0,
+                (float) Math.hypot(shape.getWidth(), shape.getHeight()));
+
+        animator.setInterpolator(new AccelerateDecelerateInterpolator());
+
+        animator.setDuration(2000);
+
+        animator.start();
 
         // You need to call the detector!
         mDetector.onTouchEvent(event);
