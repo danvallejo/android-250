@@ -8,12 +8,17 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.util.Log;
 import android.view.View;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class NotificationActivity extends AppCompatActivity {
+
+    private int progressId = 2;
+    private Notification.Builder progressNotificationBuilder;
+    private NotificationManager notificationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +48,47 @@ public class NotificationActivity extends AppCompatActivity {
                 .setStyle(new Notification.BigTextStyle().bigText("This is the text\nAnd another line")) // optional
                 .build();
 
-        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         notificationManager.notify(1, notification);
+
+        progressNotificationBuilder = new Notification.Builder(this);
+
+        progressNotificationBuilder
+                .setContentTitle("Picture Download")
+                .setContentText("Download in progress")
+                .setSmallIcon(R.drawable.ic_menu_send)
+                .setAutoCancel(true)
+                .setContentIntent(PendingIntent.getActivity(this,0,new Intent(),0))
+                .build();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                int incr;
+                // Do the "lengthy" operation 20 times
+                for (incr = 0; incr <= 100; incr+=5) {
+                    // Sets the progress indicator to a max value, the
+                    // current completion percentage, and "determinate"
+                    // state
+                    progressNotificationBuilder.setProgress(100, incr, false);
+                    // Displays the progress bar for the first time.
+                    notificationManager.notify(progressId, progressNotificationBuilder.build());
+                    // Sleeps the thread, simulating an operation
+                    // that takes time
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException e) {
+                        Log.d("NotificationActivity", "sleep failure");
+                    }
+                }
+                // When the loop is finished, updates the notification
+                progressNotificationBuilder.setContentText("Download complete")
+                        // Removes the progress bar
+                        .setProgress(0,0,false);
+                notificationManager.notify(progressId, progressNotificationBuilder.build());
+
+            }
+        }).start();
     }
 
     @OnClick(R.id.uxClearNotification)
