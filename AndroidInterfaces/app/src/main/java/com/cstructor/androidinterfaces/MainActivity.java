@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         String postRequest = new Gson().toJson(randomRequest);
 
-        new PostDataTask(this, postRequest).execute("https://api.random.org/json-rpc/1/invoke");
+        //new PostDataTask(this, postRequest).execute("https://api.random.org/json-rpc/1/invoke");
     }
 
     class PostDataTask extends AsyncTask<String, Void, String> {
@@ -158,6 +158,19 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    @OnClick(R.id.uxAudio)
+    public void onAudio(View view) {
+        Intent intent = new Intent(this, AudioActivity.class);
+        startActivity(intent);
+    }
+
+
+    @OnClick(R.id.uxCamera)
+    public void onCamera(View view) {
+        Intent intent = new Intent(this, CameraActivity.class);
+        startActivity(intent);
     }
 
     @OnClick(R.id.uxBouncingBalls)
