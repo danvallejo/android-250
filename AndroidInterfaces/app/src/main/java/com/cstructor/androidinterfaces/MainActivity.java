@@ -160,6 +160,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @OnClick(R.id.uxViewAnimation)
+    public void onViewAnimation(View view) {
+        Intent intent = new Intent(this, ViewAnimationActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxFrameAnimation)
     public void onFrameAnimation(View view) {
         Intent intent = new Intent(this, FrameAnimationActivity.class);
