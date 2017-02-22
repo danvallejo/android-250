@@ -160,6 +160,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @OnClick(R.id.uxBouncingBalls)
+    public void onBouncingBalls(View view) {
+        Intent intent = new Intent(this, BouncingBallsActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxViewAnimation)
     public void onViewAnimation(View view) {
         Intent intent = new Intent(this, ViewAnimationActivity.class);
