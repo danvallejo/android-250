@@ -160,6 +160,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @OnClick(R.id.uxSoundPool)
+    public void onSoundPool(View view) {
+        Intent intent = new Intent(this, SoundPoolActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.uxAudio)
     public void onAudio(View view) {
         Intent intent = new Intent(this, AudioActivity.class);

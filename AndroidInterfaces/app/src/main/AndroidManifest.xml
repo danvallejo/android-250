@@ -68,7 +68,8 @@
         <activity android:name=".ViewAnimationActivity" />
         <activity android:name=".BouncingBallsActivity" />
         <activity android:name=".CameraActivity" />
-        <activity android:name=".AudioActivity"></activity>
+        <activity android:name=".AudioActivity" />
+        <activity android:name=".SoundPoolActivity"></activity>
     </application>
 
 </manifest>

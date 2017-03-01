@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.cstructor.androidinterfaces.ContactItemFragment.OnListFragmentInteractionListener;
-import com.cstructor.androidinterfaces.dummy.DummyContent.DummyItem;
+import com.cstructor.core.dummy.DummyContent.DummyItem;
 
 import java.util.List;
 

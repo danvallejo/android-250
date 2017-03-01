@@ -1,4 +1,4 @@
-package com.cstructor.androidinterfaces.dummy;
+package com.cstructor.core.dummy;
 
 import java.util.ArrayList;
 import java.util.HashMap;
